@@ -1,12 +1,13 @@
-import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.sql.Connection;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.Properties;
 
 import javax.sql.DataSource;
 
+import org.askil.eshift.user.User;
+import org.askil.eshift.user.UserRole;
+import org.askil.eshift.user.UserRoleEnum;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
@@ -14,10 +15,6 @@ import org.hibernate.tool.hbm2ddl.Target;
 import org.jboss.util.Base64;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
-
-import com.askill.eshift.user.User;
-import com.askill.eshift.user.UserRole;
-import com.askill.eshift.user.UserRoleEnum;
 
 /**
  * Created by IntelliJ IDEA.

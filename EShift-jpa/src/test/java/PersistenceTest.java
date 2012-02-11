@@ -1,8 +1,7 @@
+import org.askil.eshift.user.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import com.askill.eshift.user.User;
 
 /**
  * Created by IntelliJ IDEA.
