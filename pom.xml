@@ -102,6 +102,10 @@
 
 	</dependencyManagement>
 
+	<scm>
+		<url>scm:git:https://code.google.com/p/eshift</url>
+	</scm>
+
 	<repositories>
 		<repository>
 			<id>JBoss Repository</id>
