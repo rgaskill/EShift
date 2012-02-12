@@ -34,6 +34,10 @@ public class CreateSchema {
         config.scanPackages("com.askill");
         Properties hibernateProperties = new Properties();
        
+        /*
+         * test 2
+         */
+        
         hibernateProperties.setProperty("hibernate.dialect","org.hibernate.dialect.HSQLDialect");
         hibernateProperties.setProperty("hibernate.show_sql","true");
         config.addProperties(hibernateProperties);
