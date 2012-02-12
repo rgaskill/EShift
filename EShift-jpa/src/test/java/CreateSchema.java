@@ -35,7 +35,7 @@ public class CreateSchema {
         Properties hibernateProperties = new Properties();
        
         /*
-         * test 2
+         * test 3
          */
         
         hibernateProperties.setProperty("hibernate.dialect","org.hibernate.dialect.HSQLDialect");
