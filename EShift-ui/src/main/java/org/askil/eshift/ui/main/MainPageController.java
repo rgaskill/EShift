@@ -1,5 +1,6 @@
 package org.askil.eshift.ui.main;
 
+import org.askil.eshift.ui.user.UserAdminController;
 import org.askil.eshift.ui.user.UserAdminUI;
 import org.askil.eshift.user.User;
 
@@ -25,7 +26,8 @@ public class MainPageController {
 
 		@Override
 		public void menuSelected(MenuItem selectedItem) {
-			view.setContent(new UserAdminUI());
+			UserAdminController adminController = new UserAdminController();
+			view.setContent(adminController.getView());
 			
 		}
 		

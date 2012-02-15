@@ -1,5 +1,7 @@
 package org.askil.eshift.bean;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.PersistenceContext;
 
@@ -28,6 +30,13 @@ public class UserServiceBean implements UserServiceLocal, UserServiceRemote {
 		session.save(user);
 	}
 
+	@Override
+	public List<User> getAllUsers() {
+		List<User> ret = session.createQuery("from User u").list();
+		return ret;
+	}
+
+	
 
 
 }

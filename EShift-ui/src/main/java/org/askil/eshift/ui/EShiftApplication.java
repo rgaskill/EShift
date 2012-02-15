@@ -44,5 +44,6 @@ public class EShiftApplication extends Application
 		window.setContent(view);
 
 	}
+	
 
 }
