@@ -1,19 +1,25 @@
 package org.askil.eshift.ui.main;
 
+import java.io.Serializable;
+
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Inject;
+
 import org.askil.eshift.ui.user.UserAdminController;
-import org.askil.eshift.ui.user.UserAdminUI;
-import org.askil.eshift.user.User;
 
 import com.vaadin.ui.MenuBar;
 import com.vaadin.ui.MenuBar.MenuItem;
 
-public class MainPageController {
+@SessionScoped
+public class MainPageController implements Serializable{
 
 	private MainPage view = new MainPage();
 	private MainPageModel model = new MainPageModel();
 	
-	public MainPageController(User user){
-		model.setUser(user);
+	@Inject
+	private UserAdminController adminController;
+	
+	public MainPageController(){
 		view.setModel(model);
 		view.setUserAdminMenuCommand(new UserAdminCommand());
 	}
@@ -26,7 +32,7 @@ public class MainPageController {
 
 		@Override
 		public void menuSelected(MenuItem selectedItem) {
-			UserAdminController adminController = new UserAdminController();
+			adminController.loadData();
 			view.setContent(adminController.getView());
 			
 		}

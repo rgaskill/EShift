@@ -16,10 +16,10 @@
 package org.askil.eshift.ui;
 
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Inject;
 
 import org.askil.eshift.ui.main.MainPage;
 import org.askil.eshift.ui.main.MainPageController;
-import org.askil.eshift.user.User;
 
 import com.vaadin.Application;
 import com.vaadin.ui.Window;
@@ -32,6 +32,9 @@ public class EShiftApplication extends Application
 {
 	private Window window;
 	
+	@Inject
+	private MainPageController controller;
+	
 	
 	@Override
 	public void init()
@@ -39,7 +42,6 @@ public class EShiftApplication extends Application
 		window = new Window("EShift");
 		setMainWindow(window);
 		
-		MainPageController controller = new MainPageController((User) getUser());
 		MainPage view = controller.getView();
 		window.setContent(view);
 

@@ -1,39 +1,35 @@
 package org.askil.eshift.ui.user;
 
-import javax.inject.Inject;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
+import java.io.Serializable;
 
-import org.askil.eshift.client.services.UserService;
+import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
+import javax.enterprise.context.SessionScoped;
+
+import org.askil.eshift.client.services.UserService.UserServiceLocal;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.vaadin.ui.ComponentContainer;
 
-public class UserAdminController {
+@SessionScoped
+public class UserAdminController implements Serializable{
 
 	private static Logger LOG = LoggerFactory.getLogger(UserAdminController.class);
 	
 	private UserAdminUI view = new UserAdminUI();
 	private UserAdminModel model = new UserAdminModel();
 	
-    private UserService userService;
+	@EJB
+    private UserServiceLocal userService;
 	
-	public UserAdminController(){
-		try {
-			InitialContext ic = new InitialContext();
-			 userService = (UserService) ic.lookup("UserServiceBean!org.askil.eshift.client.services.UserService$UserServiceLocal");
-		} catch (NamingException e) {
-			LOG.error("Unable to lookup service.",e);
-		}
-		
-		
+	
+	@PostConstruct
+	private void init(){
 		view.setModel(model);
-		initModel();
 	}
 	
-	
-	private void initModel(){
+	public void loadData(){
 		model.setUsers(userService.getAllUsers());
 	}
 

@@ -2,13 +2,14 @@ package org.askil.eshift.ui;
 
 import java.security.Principal;
 
+import javax.ejb.EJB;
 import javax.enterprise.inject.Instance;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 
-import org.askil.eshift.client.services.UserService;
+import org.askil.eshift.client.services.UserService.UserServiceLocal;
 import org.askil.eshift.user.User;
 
 import com.vaadin.Application;
@@ -20,8 +21,8 @@ public class EShiftServlet extends AbstractApplicationServlet {
 	@Inject
 	private Instance<EShiftApplication> application;
 	
-	@Inject
-    private UserService userService;
+	@EJB
+    private UserServiceLocal userService;
 	
 	@Override
 	protected Application getNewApplication(HttpServletRequest request)
