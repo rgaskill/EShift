@@ -1,5 +1,6 @@
 package org.askil.eshift.user;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -16,7 +17,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table( schema = "eshift" )
-public class UserRole {
+public class UserRole implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

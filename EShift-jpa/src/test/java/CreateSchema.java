@@ -30,8 +30,8 @@ public class CreateSchema {
         
         DataSource ds = (DataSource) ctx.getBean("myDataSource");
         LocalSessionFactoryBuilder config = new LocalSessionFactoryBuilder(ds);
-        config.addPackage("com.askil");
-        config.scanPackages("com.askil");
+        config.addPackage("org.askil");
+        config.scanPackages("org.askil");
         Properties hibernateProperties = new Properties();
        
       
