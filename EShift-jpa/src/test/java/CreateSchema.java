@@ -42,7 +42,7 @@ public class CreateSchema {
         
         try {
         	Connection con = ds.getConnection();
-        	con.prepareStatement("drop schema eshift if exists cascade").execute();
+        	con.prepareStatement("drop schema if exists eshift").execute();
         	con.prepareStatement("create schema eshift authorization sa").execute();
 			SchemaExport export = new SchemaExport(config, con);
 			export.create(Target.BOTH);
