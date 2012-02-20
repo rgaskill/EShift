@@ -13,6 +13,9 @@ import com.vaadin.ui.MenuBar.MenuItem;
 @SessionScoped
 public class MainPageController implements Serializable{
 
+	
+	
+	private static final long serialVersionUID = -3736925541275132944L;
 	private MainPage view = new MainPage();
 	private MainPageModel model = new MainPageModel();
 	

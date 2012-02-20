@@ -32,7 +32,8 @@ public class UserServiceBean implements UserServiceLocal, UserServiceRemote {
 
 	@Override
 	public List<User> getAllUsers() {
-		List<User> ret = session.createQuery("from User u").list();
+		List<User> ret = session.createQuery("from User u" +
+				" left join fetch u.userRoles").list();
 		return ret;
 	}
 

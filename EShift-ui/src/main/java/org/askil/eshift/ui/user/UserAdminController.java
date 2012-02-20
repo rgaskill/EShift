@@ -13,7 +13,10 @@ import org.slf4j.LoggerFactory;
 import com.vaadin.ui.ComponentContainer;
 
 @SessionScoped
-public class UserAdminController implements Serializable{
+public class UserAdminController implements Serializable {
+
+	
+	private static final long serialVersionUID = 1795049094424774061L;
 
 	private static Logger LOG = LoggerFactory.getLogger(UserAdminController.class);
 	
