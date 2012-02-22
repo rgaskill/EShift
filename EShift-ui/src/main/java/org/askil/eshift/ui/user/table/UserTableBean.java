@@ -8,6 +8,12 @@ import org.askil.eshift.user.UserRole;
 
 public class UserTableBean {
 
+	public static final String FIRST_NAME = "firstName";
+	public static final String LAST_NAME = "lastName";
+	public static final String EMAIL = "email";
+	public static final String CTRL_USER = "ctrlUser";
+	public static final String CTRL_DATE = "ctrlDate";
+	public static final String USER_ROLES = "userRoles";
 	
 	private User user;
 	
@@ -47,10 +53,6 @@ public class UserTableBean {
 
 	public String getUserRoles() {
 		return roles;
-	}
-
-	public boolean isAdmin() {
-		return user.isAdmin();
 	}
 
 	@Override
