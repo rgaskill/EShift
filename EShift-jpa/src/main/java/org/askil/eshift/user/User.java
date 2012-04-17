@@ -43,7 +43,7 @@ public class User implements Serializable {
 	
 	@ManyToMany
 	@JoinTable(schema="eshift")
-	private Set<UserRole> userRoles = new HashSet<>();
+	private Set<UserRole> userRoles = new HashSet<UserRole>();
 	
 	
 	public Integer getId() {

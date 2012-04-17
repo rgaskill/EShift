@@ -24,8 +24,8 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.6</source>
+					<target>1.6</target>
 				</configuration>
 			</plugin>
 			<!-- A simple Jetty test server at http://localhost:8080/EShift-ui can 
@@ -59,7 +59,7 @@
 			<dependency>
 				<groupId>org.jboss.as</groupId>
 				<artifactId>jboss-as-parent</artifactId>
-				<version>7.0.2.Final</version>
+				<version>7.1.1.Final</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>

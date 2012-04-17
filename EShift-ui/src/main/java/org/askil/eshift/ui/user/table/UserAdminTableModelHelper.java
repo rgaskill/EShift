@@ -10,7 +10,7 @@ import com.vaadin.data.util.BeanItemContainer;
 
 public class UserAdminTableModelHelper {
 
-	private BeanItemContainer<UserTableBean> userTableModel = new BeanItemContainer<>(UserTableBean.class);
+	private BeanItemContainer<UserTableBean> userTableModel = new BeanItemContainer<UserTableBean>(UserTableBean.class);
 	
 	
 	public Container getContainer(){

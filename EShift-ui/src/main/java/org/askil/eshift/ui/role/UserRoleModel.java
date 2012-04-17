@@ -9,7 +9,7 @@ import com.vaadin.data.util.BeanItemContainer;
 
 public class UserRoleModel {
 
-	private BeanItemContainer<UserRole> userRoleTableModel = new BeanItemContainer<>(UserRole.class);
+	private BeanItemContainer<UserRole> userRoleTableModel = new BeanItemContainer<UserRole>(UserRole.class);
 	
 	public void setRoles(List<UserRole> users){
 		userRoleTableModel.removeAllItems();
