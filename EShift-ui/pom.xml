@@ -11,28 +11,36 @@
 	<artifactId>EShift-ui</artifactId>
 	<packaging>war</packaging>
 
-
+	<profiles>
+		<profile>
+			<id>deploy</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.jboss.as.plugins</groupId>
+						<artifactId>jboss-as-maven-plugin</artifactId>
+						<version>7.1.1.Final</version>
+						<executions>
+							<execution>
+								<phase>package</phase>
+								<goals>
+									<goal>deploy</goal>
+								</goals>
+								<configuration>
+									<userName>eshiftadmin</userName>
+									<userName>admin1</userName>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 
 	<build>
 		<finalName>eshift</finalName>
 		<plugins>
-			<plugin>
-				<groupId>org.jboss.as.plugins</groupId>
-				<artifactId>jboss-as-maven-plugin</artifactId>
-				<version>7.1.1.Final</version> 
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>deploy</goal>
-						</goals>
-						<configuration>
-							<userName>eshiftadmin</userName>
-							<userName>admin1</userName>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
