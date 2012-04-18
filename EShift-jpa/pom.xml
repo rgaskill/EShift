@@ -56,73 +56,7 @@
 	<profiles>
 		<profile>
 			<id>setup_jboss</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.jboss.as.plugins</groupId>
-						<artifactId>jboss-as-maven-plugin</artifactId>
-						<executions>
-							<!-- <execution> <id>deploy-driver</id> <phase>package</phase> <configuration> 
-								<groupId>postgresql</groupId> <artifactId>postgresql</artifactId> <name>postgresql.jar</name> 
-								</configuration> <goals> <goal>deploy-artifact</goal> </goals> </execution> -->
-							<execution>
-								<id>add-datasource</id>
-								<configuration>
-									<address>subsystem=datasources,data-source=EShiftDS</address>
-									<resource>
-										<enable-resource>true</enable-resource>
-										<properties>
-											<connection-url>jdbc:h2:tcp://localhost/~/eshift</connection-url>
-											<jndi-name>java:/EShiftDS</jndi-name>
-											<enabled>true</enabled>
-											<pool-name>EShiftDS_Pool</pool-name>
-											<user-name>sa</user-name>
-											<password>admin1</password>
-											<driver-name>h2</driver-name>
-										</properties>
-									</resource>
-								</configuration>
-								<goals>
-									<goal>add-resource</goal>
-								</goals>
-							</execution>
-							<execution>
-								<id>add-security-domain</id>
-								<configuration>
-									<address>subsystem=security</address>
-									<force>true</force>
-									<resources>
-										<resource>
-											<address>security-domain=EShiftRealm</address>
-											<properties>
-												<cache-type>default</cache-type>
-											</properties>
-											<resources>
-												<resource>
-													<address>authentication=classic</address>
-													<properties>
-														<login-modules>
-															!![{"code"=>"Database","flag"=>"required"
-															,"module-options"=>[("dsJndiName"=>"java:/EShiftDS/")
-															,("principalsQuery"=>"SELECT password FROM eshift.user WHERE email=?")
-															,("rolesQuery"=>"select ur.user_role,'Roles' from eshift.USERROLE ur join eshift.USER_USERROLE uur on ur.ID = uur.USERROLES_ID join eshift.USER u on uur.USER_ID = u.ID where u.EMAIL = ?")
-															,("hashAlgorithm"=>"MD5")
-															,("hashEncoding"=>"base64")]}]
-														</login-modules>
-													</properties>
-												</resource>
-											</resources>
-										</resource>
-									</resources>
-								</configuration>
-								<goals>
-									<goal>add-resource</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
+			
 		</profile>
 	</profiles>
 
